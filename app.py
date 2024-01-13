@@ -10,7 +10,7 @@ def index():
     formatted_date_time = now.strftime("%Y-%m-%d %H:%M:%S")
 
     # Renderizar la plantilla con el mensaje de bienvenida y la fecha y hora actuales
-    return render_template('index.html', message='¡Bienvenido!', date_time=formatted_date_time)
+    return render_template('index.html', message='¡Bienvenidos!', date_time=formatted_date_time)
 
 if __name__ == '__main__':
     app.run(debug=True)
