@@ -5,7 +5,7 @@ pipeline {
         stage('Clonar Repositorio') {
             steps {
                 // Clona el repositorio de GitHub
-                git 'https://github.com/ccaicedocam85/pruebatecnica.git'
+                git branch: 'develop', url: 'https://github.com/ccaicedocam85/pruebatecnica.git'
             }
         }
 
