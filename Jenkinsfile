@@ -23,10 +23,10 @@ pipeline {
         //Construir la imagen de Docker y subirla a un registro público como Docker Hub.
         stage('Construir Imagen Docker') {
             steps {
-                sh 'docker build -t docker push cristec85/prueba:latest .'  // Construye la imagen
+                sh 'docker build -t cristec85/prueba:latest .'  // Construye la imagen
                 sh 'docker push cristec85/prueba:latest'  // Sube la imagen a Docker Hub
            }
-           
+
         }
     }
 
