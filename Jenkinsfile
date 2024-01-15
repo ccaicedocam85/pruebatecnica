@@ -26,6 +26,7 @@ pipeline {
                 sh 'docker build -t docker push cristec85/prueba:latest .'  // Construye la imagen
                 sh 'docker push cristec85/prueba:latest'  // Sube la imagen a Docker Hub
            }
+           
         }
     }
 
