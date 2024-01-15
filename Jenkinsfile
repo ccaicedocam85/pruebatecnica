@@ -22,11 +22,14 @@ pipeline {
         }
         //Construir la imagen de Docker y subirla a un registro público como Docker Hub.
         stage('Construir Imagen Docker') {
-            steps {
-                sh 'docker build -t cristec85/prueba:latest .'  // Construye la imagen
-                sh 'docker push cristec85/prueba:latest'  // Sube la imagen a Docker Hub
-           }
+           steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerHubCredentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+                    sh 'docker build -t cristec85/prueba:latest .'  // Construye la imagen
+                    sh 'docker push cristec85/prueba:latest'  // Sube la imagen a Docker Hub
         }
+    }
+}
     }
 
 
