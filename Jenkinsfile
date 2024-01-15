@@ -12,6 +12,7 @@ pipeline {
         stage('Ejecutar Pruebas Unitarias') {
             steps {
                 // Ejecuta pruebas unitarias 
+                sh 'install -r requirements.txt'
                 sh 'pytest tests/'  // Ejecuta pruebas con PyTest
             }
         }
@@ -23,5 +24,5 @@ pipeline {
             cleanWs()
         }
     }
-    
+
 }
