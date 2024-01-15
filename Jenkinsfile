@@ -20,15 +20,16 @@ pipeline {
                 sh 'pytest tests/'  // Ejecuta pruebas con PyTest
             }
         }
-    }
-
-    //Construir la imagen de Docker y subirla a un registro público como Docker Hub.
-    stage('Construir Imagen Docker') {
-        steps {
-            sh 'docker build -t docker push cristec85/prueba:latest .'  // Construye la imagen
-            sh 'docker push cristec85/prueba:latest'  // Sube la imagen a Docker Hub
+        //Construir la imagen de Docker y subirla a un registro público como Docker Hub.
+        stage('Construir Imagen Docker') {
+            steps {
+                sh 'docker build -t docker push cristec85/prueba:latest .'  // Construye la imagen
+                sh 'docker push cristec85/prueba:latest'  // Sube la imagen a Docker Hub
+           }
         }
     }
+
+
 
     post {
         always {
