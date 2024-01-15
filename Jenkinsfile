@@ -1,8 +1,6 @@
 pipeline {
     agent any
 
-    import jenkins.plugins.git.*
-
     stages {
         stage('Clonar Repositorio') {
             steps {
