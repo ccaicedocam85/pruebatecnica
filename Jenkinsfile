@@ -12,6 +12,8 @@ pipeline {
         stage('Ejecutar Pruebas Unitarias') {
             steps {
                 // Ejecuta pruebas unitarias 
+                //linea de comando para instalar python y pip
+                sh 'sudo apt-get install python3.8'
                 sh 'pip install -r requirements.txt'  // Instala dependencias
                 sh 'pytest tests/'  // Ejecuta pruebas con PyTest
             }
