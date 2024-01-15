@@ -12,7 +12,7 @@ pipeline {
         stage('Ejecutar Pruebas Unitarias') {
             steps {
                 // Ejecuta pruebas unitarias 
-                sh 'install -r requirements.txt'
+                sh 'pip install -r requirements.txt'  // Instala dependencias
                 sh 'pytest tests/'  // Ejecuta pruebas con PyTest
             }
         }
