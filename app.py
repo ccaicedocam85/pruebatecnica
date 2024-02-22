@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template
 from datetime import datetime
+from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
+
+# Disable CSRF protection
+app.config['WTF_CSRF_ENABLED'] = False
+
+# Initialize CSRF protection
+csrf = CSRFProtect(app)
 
 @app.route('/')
 def index():
